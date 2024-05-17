@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MIT
+
 pragma solidity ^0.8.0;
 contract Test{
     struct News {
@@ -6,13 +7,23 @@ contract Test{
         string description;
         string link;
         address publisher;
+        string publisherName;
+        string publisherDomain; 
         uint256 timestamp;
         int256 votes; // New field to store votes
+    }
+
+    struct Profile{
+        string name;
+        string ethDomain; // whit ens protocol
+        string web2Page;
+        int256 reputation; // not used for now
     }
 
     mapping(uint256 => News) public newsRegistry;
     mapping(address => uint256) public credits;
     mapping(address => uint256) public lastSubmission;
+    mapping(address => Profile) public profiles;
     mapping(uint256 => mapping(address => bool)) public hasVoted; // Tracks if an address has voted on a specific news item
 
     uint256 public newsCount;
@@ -29,11 +40,17 @@ contract Test{
         require(credits[msg.sender] > 0, "Insufficient credits");
         // require(block.timestamp - lastSubmission[msg.sender] > 1 days, "Daily submission limit reached");
 
+        // ensResolve(profiles[msg.sender].ethDomain) == profiles[msg.sender]
+         
+
+
         newsRegistry[newsCount] = News({
             title: _title,
             description: _description,
             link: _link,
             publisher: msg.sender, // msg.sender -> address of the publisher this using ens to get the address of the publisher
+            publisherName: profiles[msg.sender].name,
+            publisherDomain: profiles[msg.sender].ethDomain,
             timestamp: block.timestamp,
             votes: 0 // Initialize votes to 0
         });
