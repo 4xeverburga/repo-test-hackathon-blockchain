@@ -1,0 +1,358 @@
+{
+  "contractName": "IInterfaceResolver",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "node",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes4",
+          "name": "interfaceID",
+          "type": "bytes4"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "implementer",
+          "type": "address"
+        }
+      ],
+      "name": "InterfaceChanged",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "node",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes4",
+          "name": "interfaceID",
+          "type": "bytes4"
+        }
+      ],
+      "name": "interfaceImplementer",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes4\",\"name\":\"interfaceID\",\"type\":\"bytes4\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"implementer\",\"type\":\"address\"}],\"name\":\"InterfaceChanged\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"internalType\":\"bytes4\",\"name\":\"interfaceID\",\"type\":\"bytes4\"}],\"name\":\"interfaceImplementer\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"interfaceImplementer(bytes32,bytes4)\":{\"params\":{\"interfaceID\":\"The EIP 165 interface ID to check for.\",\"node\":\"The ENS node to query.\"},\"returns\":{\"_0\":\"The address that implements this interface, or 0 if the interface is unsupported.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"interfaceImplementer(bytes32,bytes4)\":{\"notice\":\"Returns the address of a contract that implements the specified interface for this name. If an implementer has not been set for this interfaceID and name, the resolver will query the contract at `addr()`. If `addr()` is set, a contract exists at that address, and that contract implements EIP165 and returns `true` for the specified interfaceID, its address will be returned.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"@ensdomains/ens-contracts/contracts/resolvers/profiles/IInterfaceResolver.sol\":\"IInterfaceResolver\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@ensdomains/ens-contracts/contracts/resolvers/profiles/IInterfaceResolver.sol\":{\"keccak256\":\"0x390321fb58f7b927df9562450981e74b4be3907e7c09df321fd3b7409b63ae28\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://045d12c6e0e4596b3672614751a9e75188183a89765a6abd938294e0294e9c56\",\"dweb:/ipfs/QmazngvagEoKe29s4M9Rv8KygWD5hrAtNPkYDPJ2pK13yx\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.8.4;\n\ninterface IInterfaceResolver {\n    event InterfaceChanged(\n        bytes32 indexed node,\n        bytes4 indexed interfaceID,\n        address implementer\n    );\n\n    /**\n     * Returns the address of a contract that implements the specified interface for this name.\n     * If an implementer has not been set for this interfaceID and name, the resolver will query\n     * the contract at `addr()`. If `addr()` is set, a contract exists at that address, and that\n     * contract implements EIP165 and returns `true` for the specified interfaceID, its address\n     * will be returned.\n     * @param node The ENS node to query.\n     * @param interfaceID The EIP 165 interface ID to check for.\n     * @return The address that implements this interface, or 0 if the interface is unsupported.\n     */\n    function interfaceImplementer(\n        bytes32 node,\n        bytes4 interfaceID\n    ) external view returns (address);\n}\n",
+  "sourcePath": "@ensdomains/ens-contracts/contracts/resolvers/profiles/IInterfaceResolver.sol",
+  "ast": {
+    "absolutePath": "@ensdomains/ens-contracts/contracts/resolvers/profiles/IInterfaceResolver.sol",
+    "exportedSymbols": {
+      "IInterfaceResolver": [
+        4187
+      ]
+    },
+    "id": 4188,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4168,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".4"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:24:19"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IInterfaceResolver",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 4187,
+        "linearizedBaseContracts": [
+          4187
+        ],
+        "name": "IInterfaceResolver",
+        "nameLocation": "68:18:19",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "eventSelector": "7c69f06bea0bdef565b709e93a147836b0063ba2dd89f02d0b7e8d931e6a6daa",
+            "id": 4176,
+            "name": "InterfaceChanged",
+            "nameLocation": "99:16:19",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4175,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4170,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "node",
+                  "nameLocation": "141:4:19",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4176,
+                  "src": "125:20:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 4169,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "125:7:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4172,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "interfaceID",
+                  "nameLocation": "170:11:19",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4176,
+                  "src": "155:26:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 4171,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "155:6:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4174,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "implementer",
+                  "nameLocation": "199:11:19",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4176,
+                  "src": "191:19:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4173,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "191:7:19",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "115:101:19"
+            },
+            "src": "93:124:19"
+          },
+          {
+            "documentation": {
+              "id": 4177,
+              "nodeType": "StructuredDocumentation",
+              "src": "223:626:19",
+              "text": " Returns the address of a contract that implements the specified interface for this name.\n If an implementer has not been set for this interfaceID and name, the resolver will query\n the contract at `addr()`. If `addr()` is set, a contract exists at that address, and that\n contract implements EIP165 and returns `true` for the specified interfaceID, its address\n will be returned.\n @param node The ENS node to query.\n @param interfaceID The EIP 165 interface ID to check for.\n @return The address that implements this interface, or 0 if the interface is unsupported."
+            },
+            "functionSelector": "124a319c",
+            "id": 4186,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "interfaceImplementer",
+            "nameLocation": "863:20:19",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4182,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4179,
+                  "mutability": "mutable",
+                  "name": "node",
+                  "nameLocation": "901:4:19",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4186,
+                  "src": "893:12:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 4178,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "893:7:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4181,
+                  "mutability": "mutable",
+                  "name": "interfaceID",
+                  "nameLocation": "922:11:19",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4186,
+                  "src": "915:18:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 4180,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "915:6:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "883:56:19"
+            },
+            "returnParameters": {
+              "id": 4185,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4184,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4186,
+                  "src": "963:7:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4183,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "963:7:19",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "962:9:19"
+            },
+            "scope": 4187,
+            "src": "854:118:19",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 4188,
+        "src": "58:916:19",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:943:19"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2024-05-17T15:51:42.524Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "interfaceImplementer(bytes32,bytes4)": {
+        "params": {
+          "interfaceID": "The EIP 165 interface ID to check for.",
+          "node": "The ENS node to query."
+        },
+        "returns": {
+          "_0": "The address that implements this interface, or 0 if the interface is unsupported."
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "interfaceImplementer(bytes32,bytes4)": {
+        "notice": "Returns the address of a contract that implements the specified interface for this name. If an implementer has not been set for this interfaceID and name, the resolver will query the contract at `addr()`. If `addr()` is set, a contract exists at that address, and that contract implements EIP165 and returns `true` for the specified interfaceID, its address will be returned."
+      }
+    },
+    "version": 1
+  }
+}

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@ensdomains/ens-contracts": "^1.1.4",
     "web3": "^4.8.0"
   }
 }
